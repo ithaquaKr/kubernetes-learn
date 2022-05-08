@@ -1,0 +1,37 @@
+//Tìm hiểu ansible
+// Đề bài:
+Dựng 2 VM ubuntu or centos, config hostname của 2 VM này theo định dạng "ansible_hostname_IP" 
+
+// ------ 
+Thực hiện
+
+1.  Sử dụng dịch vụ Digital Ocean triển khai 1 VM ubuntu 20.04 <IP: 159.223.94.95> sử dụng làm ansible server <Controller Machine>
+    - Cài đặt ansible trên VM ansible-server.
+
+2. Tạo 2 host VM ubuntu 20.04 sử dụng làm node
+    host1: <IP: 128.199.210.82>
+    host2: <IP: 188.166.254.184>
+
+
+
+    - Khởi tạo SSH key từ ansible server, copy public vào các node
+        -   ssh-keygen -t rsa
+        -   ssh-copy-id root@128.199.210.82 
+        .............
+    - Test test thử kết nối tới các node
+        - ansible hostserver -m ping
+3. Thêm các hostserver vào Inventory:
+    /etc/ansible/host
+        [hostserver]
+        128.199.210.82      #Host1
+        188.166.254.184     #Host2
+
+4. Tạo playbook thay đổi hostname của các hostserver thành dạng ansible-hostserver-<IP>
+    - file: confighost.yml
+    
+5. Kiểm tra lại tất cả hostname xem đã đúng yêu cầu hay chưa
+    -   ansible hostserver -m shell -a "hostname"   # Kiểm tra hostname
+    -   ansible hostserver -m shell -a "cat /etc/hosts"     # Kiểm tra file hosts
+
+
+//halikenzA@201a

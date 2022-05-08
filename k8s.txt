@@ -1,0 +1,151 @@
+Đề tài: Lý thuyết và triển khai Kubernetes. (12 pages)
+
+I. Lý thuyết (5 page)
+	1. Tổng quan.
+	- Kubernetes là gì?
+	- Kubernetes giải quyết vấn đề gì?
+	- Sử dụng Kubernetes trong tình huống nào?
+	2. Những khái niệm cơ bản trong Kubernetes.
+	- Master node
+	- Worker node
+	- kubectl
+	- Pod
+	- Image
+	- Deployment
+	- Replicas Controller
+	- Service
+	- Label
+
+/// Lưu ý khi soạn lý thuyết: note lại những chỗ tham khảo.
+//////Tài liệu tham khảo.
+1. https://thenewstack.io/kubernetes-an-overview/
+2. https://medium.com/google-cloud/kubernetes-101-pods-nodes-containers-and-clusters-c1509e409e16
+3. https://thinkit.co.jp/article/13289
+4. https://bizflycloud.vn/tin-tuc/kubernetes-la-gi-vai-tro-cua-kubernetes-la-gi-20181015094513924.htm
+
+
+
+
+
+///////////////
+II. Triển khai (5 pages )
+
+
+////
+Triển khai kubernetes cluster multinode
+-----NAME:---------------Info----------------------------Role-------
+kuber-master		Ubuntu 20.04/Docker CE/Kubernetes/			master     -
+								IP:                                                -
+kuber-worker1		Ubuntu 20.04/Docker CE/Kubernetes/			worker	   -
+								IP:                                                -
+kuber-worker2		Ubuntu 20.04/Docker CE/Kubernetes/			worker     -
+								IP:                                                -
+kuber-worker3		Ubuntu 20.04/Docker CE/Kubernetes/			worker     -
+								IP:                                                -
+--------------------------------------------------------------------
+Step 1: Create VPS from Digital Ocean & install Ansible.
+
+
+---
+Step 2: Setting up Ansible to Deploy Kubernetes
+
+
+---
+Step 3: Creating a Kubernetes user with Ansible Playbook
+
+
+---
+Step 4: Install Kubernetes with Ansible Playbook
+
+
+---
+Step 5: Creating a Kubernetes Cluster Master Node using Ansible Playbook
+
+
+---
+Step 6: Join Worker Nodes to Kubernetes Cluster using Ansible Playbook
+
+
+---
+Sumary:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+- hosts: 'master, worker'
+  become: yes
+
+  tasks:
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+
+    - name: allow 'kube' to use sudo without needing a password
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+
+    - name: create the kube user account
+      user: 
+        name=kube
+        group=wheel 
+        append=yes 
+        state=present 
+        createhome=yes 
+        shell=/bin/bash
+
+    - name: set up authorized keys for the kube user
+      authorized_key: user=kube key="{{item}}"
+      with_file:
+        - ~/.ssh/id_rsa.pub 
